@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+    <link href="css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.4.0/sockjs.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/socket.js"></script>
+</head>
+<body>
+
+<section id="form_container">
+
+    <div class="center">
+        <div class="form-title d-block text-center">
+            <h1>It's all just a game... 🤫</h1>
+            <p>Let's Play!</p>
+        </div>
+    </div>
+
+    <div class="center">
+        <form id="login_form" method="POST" action="/game/login">
+            <div class="d-block form-group">
+                <label>
+                    Username
+                    <input type="text" name="username" class="form-control" id="username" required=""/>
+                </label>
+            </div>
+            <div class="d-block form-group">
+                <label>
+                    Password
+                    <input type="password" name="password" id="password" class="form-control" required=""/>
+                </label>
+            </div>
+            <div class="d-block form-group">
+                <button type="submit" class="cta-btn d-block w-100">Login</button>
+            </div>
+        </form>
+
+        <div class="round">
+            <h2>Round <span id="round_num"></span></h2>
+
+        </div>
+
+        <form id="game_form" method="POST" action="/game/gameplay">
+            <div class="d-block form-group">
+                <label>
+                    Enter Your Choice
+                    <select  name="choice" id="choice">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </label>
+            </div>
+            <div class="d-block form-group">
+                <button type="submit" class="cta-btn d-block w-100">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+</body>
+</html>
